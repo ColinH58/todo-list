@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ToDoForm = ({ setTodos }) => {
+const ToDoForm = ({ addTodo }) => {
   const [todo, setTodo] = useState({
     id: "",
     task: "",
@@ -8,13 +8,13 @@ const ToDoForm = ({ setTodos }) => {
   });
 
   function handleInput(e) {
-    setTodo({ ...todo, entry: e.target.value });
+    setTodo({ ...todo, task: e.target.value });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     if (todo.task.trim()) {
-      setTodos({ ...todo, id: todo.task });
+      addTodo({ ...todo, id: todo.task });
       setTodo({ ...todo, task: "" });
     }
   }

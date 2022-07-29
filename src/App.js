@@ -6,9 +6,14 @@ import ToDoForm from "./Components/ToDoForm";
 function App() {
   const [todos, setTodos] = useState([]);
 
+  function addTodo(todo) {
+    setTodos([todo, ...todos]);
+  }
+
   return (
     <div>
-      <ToDoForm setTodos={setTodos} />
+      <h1>To Do List</h1>
+      <ToDoForm addTodo={addTodo} />
       <ToDoList todos={todos} />
     </div>
   );
