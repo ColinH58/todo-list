@@ -1,11 +1,14 @@
 import React from "react";
 
-const ToDos = ({ todo }) => {
+const ToDos = ({ todo, handleDelete }) => {
+  function handleDeleteTask() {
+    handleDelete(todo.id);
+  }
+
   return (
     <div>
-        <input type="checkbox" />
-      <li>{todo.entry}</li>
-      <button>X</button>
+      <li>{todo.task}</li>
+      <button onClick={handleDeleteTask}>X</button>
     </div>
   );
 };
