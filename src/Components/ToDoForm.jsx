@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//IGNORE THIS COMMENT FOR NOW, DELETE THIS COMMENT LATER
+
 const ToDoForm = ({ addTodo }) => {
   const [todo, setTodo] = useState({
     id: "",
